@@ -23,7 +23,7 @@ h4{
 
 .weather-app {
     min-height: 100vh;
-    background-image : url("public/Images/Background/Day/clear.jpg");
+    background-image : url("images/background/day/clear.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size : cover;

@@ -65,17 +65,17 @@ function fetchWeatherDetails(){
         }
 
         if (code == 1000){
-            app.style.backgroundImage = `url(images/background/${dayORnight}/clear.png)`
+            app.style.backgroundImage = `url("images/background/${dayORnight}/clear.png")`
         }
         else if(cloudCodes.includes(code)){
-            app.style.backgroundImage = `url(images/background/${dayORnight}/cloudy.png)`
+            app.style.backgroundImage = `url("images/background/${dayORnight}/cloudy.png")`
     
         }
         else if(rainCodes.includes(code)){
-            app.style.backgroundImage = `url(images/background/${dayORnight}/rainy.png)`
+            app.style.backgroundImage = `url("images/background/${dayORnight}/rainy.png")`
         }
         else {
-            app.style.backgroundImage = `url(images/background/${dayORnight}/snowy.png)`
+            app.style.backgroundImage = `url("images/background/${dayORnight}/snowy.png")`
         }
         app.style.opacity = 1;
         console.log(data);
