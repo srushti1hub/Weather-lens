@@ -55,30 +55,31 @@ function fetchWeatherDetails(){
         windOutput.innerHTML = data.current.wind_kph+" km/h";
         pressureOutput.innerHTML = data.current.pressure_in+" in";
         icon.src = data.current.condition.icon;
-        let dayORnight = "day";
+        let dayORnight = "Day";
         const code = data.current.condition.code;
         const cloudCodes = [1003,1006,1009,1030,1069,1087,1135,1273,1276,1279,1282];
         const rainCodes = [1063,1072,1150,1153,1180,1183,1186,1189,1192,1195,1204,1207,1240,1243,1246,1249,1252];
 
         if(!data.current.is_day){
-            dayORnight = "night";
+            dayORnight = "Night";
         }
 
         if (code == 1000){
-            app.style.backgroundImage = `url("/images/background/${dayORnight}/clear.png")`
+            app.style.backgroundImage = `url(https://github.com/srushti1hub/Weather-lens/blob/main/public/Images/Background/${dayORnight}/clear.png?raw=true)`
+            app.style.opacity = 1;
         }
         else if(cloudCodes.includes(code)){
-            app.style.backgroundImage = `url("/images/background/${dayORnight}/cloudy.png")`
-    
+            app.style.backgroundImage = `url(https://github.com/srushti1hub/Weather-lens/blob/main/public/Images/Background/${dayORnight}/cloudy.png?raw=true)`
+            app.style.opacity = 1;
         }
         else if(rainCodes.includes(code)){
-            app.style.backgroundImage = `url("/images/background/${dayORnight}/rainy.png")`
+            app.style.backgroundImage = `url(https://github.com/srushti1hub/Weather-lens/blob/main/public/Images/Background/${dayORnight}/rainy.png?raw=true)`
+            app.style.opacity = 1;
         }
         else {
-            app.style.backgroundImage = `url("/images/background/${dayORnight}/snowy.png")`
+            app.style.backgroundImage = `url(https://github.com/srushti1hub/Weather-lens/blob/main/public/Images/Background/${dayORnight}/snowy.png?raw=true)`
+            app.style.opacity = 1;
         }
-        app.style.opacity = 1;
-        console.log(data);
     })
     .catch(() => {
         alert("City not found,please try again");
