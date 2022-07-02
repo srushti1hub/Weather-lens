@@ -55,27 +55,27 @@ function fetchWeatherDetails(){
         windOutput.innerHTML = data.current.wind_kph+" km/h";
         pressureOutput.innerHTML = data.current.pressure_in+" in";
         icon.src = data.current.condition.icon;
-        let dayORnight = "Day";
+        let dayORnight = "day";
         const code = data.current.condition.code;
         const cloudCodes = [1003,1006,1009,1030,1069,1087,1135,1273,1276,1279,1282];
         const rainCodes = [1063,1072,1150,1153,1180,1183,1186,1189,1192,1195,1204,1207,1240,1243,1246,1249,1252];
 
         if(!data.current.is_day){
-            dayORnight = "Night";
+            dayORnight = "night";
         }
 
         if (code == 1000){
-            app.style.backgroundImage = `url(/Images/Background/${dayORnight}/clear.jpg)`
+            app.style.backgroundImage = `url(/images/background/${dayORnight}/clear.png)`
         }
         else if(cloudCodes.includes(code)){
-            app.style.backgroundImage = `url(/Images/Background/${dayORnight}/cloudy.jpg)`
+            app.style.backgroundImage = `url(/images/background/${dayORnight}/cloudy.png)`
     
         }
         else if(rainCodes.includes(code)){
-            app.style.backgroundImage = `url(/Images/Background/${dayORnight}/rainy.jpg)`
+            app.style.backgroundImage = `url(/images/background/${dayORnight}/rainy.png)`
         }
         else {
-            app.style.backgroundImage = `url(/Images/Background/${dayORnight}/snowy.jpg)`
+            app.style.backgroundImage = `url(/images/background/${dayORnight}/snowy.png)`
         }
         app.style.opacity = 1;
         console.log(data);
